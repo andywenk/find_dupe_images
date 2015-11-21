@@ -18,6 +18,7 @@
 require 'find_dupe_images'
 
 info = <<INFO
+
                     ===find_dupe_images #{FindDupeImages::VERSION}===
 
 Description:

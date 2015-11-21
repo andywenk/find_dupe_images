@@ -12,6 +12,9 @@ module FindDupeImages
 
     def log(message, log_level: self.log_level)
       @@logger.send(log_level, message.force_encoding('UTF-8'))
+      if $count % 10 == 0
+        print "(#{$count}) "
+      end
       print '.'
     end
   end

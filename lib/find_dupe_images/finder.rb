@@ -32,6 +32,7 @@ module FindDupeImages
 
         @directory.each do |filename|
           if FindDupeImages::Image.new(filename).is_image?
+            $count = $count.nil? ? 1 : $count + 1
             log_data(filename)
             serialize_data
           end
@@ -77,7 +78,7 @@ module FindDupeImages
         end
       end
 
-      def without_duplicates(results)
+      def without_duplicates
         puts "\n====No files have been detectad as duplicates====\n"
       end
     end
