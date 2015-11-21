@@ -17,4 +17,23 @@
 
 require 'find_dupe_images'
 
+info = <<INFO
+                    ===find_dupe_images #{FindDupeImages::VERSION}===
+
+Description:
+
+  find_dupe_images is a tool to find duplicate images in a directory structure. It will open
+  the images and create a MD5 hash of the content. That means, that the name of the file is
+  irrelevant. Due to this fact, it can take quite a long time to create the digests from the images.
+
+  All you have to do is to give a starting directory. All images in directories below will be procesed.
+
+Usage:
+
+  find_dupe_images /some/directory/with/images
+
+INFO
+
+puts info
+
 FindDupeImages.execute

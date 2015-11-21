@@ -27,6 +27,9 @@ module FindDupeImages
 
       def traverse_directory(dir)
         FindDupeImages::Serializer.new.remove_marshal_file
+
+        puts "\nStarting to process #{@directory.size} images ...\n"
+
         @directory.each do |filename|
           if FindDupeImages::Image.new(filename).is_image?
             log_data(filename)
@@ -59,11 +62,23 @@ module FindDupeImages
 
       def result
         results = FindDupeImages::Serializer.new.deserialize
+        if results.size > 0
+          with_duplicates(results)
+        else
+          without_duplicates
+        end
+        puts "\nDONE!"
+      end
+
+      def with_duplicates(results)
         puts "\n====The following files have been detectad as duplicates:====\n\n"
         results.each_pair do |hexdigest, file|
           puts file
         end
-        puts "\nDONE!"
+      end
+
+      def without_duplicates(results)
+        puts "\n====No files have been detectad as duplicates====\n"
       end
     end
   end
