@@ -8,11 +8,11 @@ module FindDupeImages
 
       self.log_level = log_level
       @@logger ||= ::LogStashLogger.new(type: :file, path: log_file, sync: true)
-      #@@logger ||= ::Logger.new(log_file)
     end
 
     def log(message, log_level: self.log_level)
       @@logger.send(log_level, message.force_encoding('UTF-8'))
+      puts message
     end
   end
 end

@@ -14,7 +14,11 @@ module FindDupeImages
     private
 
     def image_type
-      Magick::Image.read(@image).first.format
+      begin
+        Magick::Image.read(@image).first.format
+      rescue Magick::ImageMagickError => e
+        FindDupeImages.logger.log({error: e.message}.to_json)
+      end
     end
   end
 end
