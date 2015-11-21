@@ -6,6 +6,7 @@ module FindDupeImages
         puts "ERROR: #{error_message}"
       end
     end
+    
     class DirectoryRequired < Base
       def initialize
         super('Please provide a directory')

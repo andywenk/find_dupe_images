@@ -10,4 +10,10 @@ describe FindDupeImages do
     expect(FindDupeImages::VERSION).not_to be nil
   end
 
+  it 'has methods' do
+    expect(FindDupeImages.respond_to?(:execute)).to be_truthy
+  end
+
+
+
 end
