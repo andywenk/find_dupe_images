@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
+require "bundler/setup_find_dupe_images"
 require "find_dupe_images"
 
 # You can add fixtures and/or initialization code here to make experimenting
