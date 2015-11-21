@@ -1,0 +1,7 @@
+# Logfile created on 2015-11-21 19:13:11 +0100 by logger.rb/47272
+{"message":"checking: /Users/andwen/Pictures/Andy/","@timestamp":"2015-11-21T20:23:22.415+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"message":"checking: /Users/andwen/Pictures/Andy","@timestamp":"2015-11-21T20:23:54.193+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"message":"checking: /Users/andwen/Pictures/Andy","@timestamp":"2015-11-21T20:24:50.957+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"message":"checking: /Users/andwen/Pictures/Andy","@timestamp":"2015-11-21T20:26:29.455+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"message":"checking: /Users/andwen/Pictures/Andy/","@timestamp":"2015-11-21T20:26:34.111+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"message":"checking: /Users/andwen/Pictures/Andy/","@timestamp":"2015-11-21T20:28:02.106+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}

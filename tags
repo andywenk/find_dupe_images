@@ -1,0 +1,31 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Base	lib/find_dupe_images/error/base.rb	/^    class Base < StandardError$/;"	c	class:FindDupeImages.Error
+DirectoryRequired	lib/find_dupe_images/error/base.rb	/^    class DirectoryRequired < Base$/;"	c	class:FindDupeImages.Error
+Error	lib/find_dupe_images/error/base.rb	/^  module Error$/;"	m	class:FindDupeImages
+FindDupeImages	lib/find_dupe_images.rb	/^module FindDupeImages$/;"	m
+FindDupeImages	lib/find_dupe_images/error/base.rb	/^module FindDupeImages$/;"	m
+FindDupeImages	lib/find_dupe_images/finder.rb	/^module FindDupeImages$/;"	m
+FindDupeImages	lib/find_dupe_images/logger.rb	/^module FindDupeImages$/;"	m
+FindDupeImages	lib/find_dupe_images/option.rb	/^module FindDupeImages$/;"	m
+FindDupeImages	lib/find_dupe_images/version.rb	/^module FindDupeImages$/;"	m
+Finder	lib/find_dupe_images/finder.rb	/^  class Finder$/;"	c	class:FindDupeImages
+Logger	lib/find_dupe_images/logger.rb	/^  class Logger$/;"	c	class:FindDupeImages
+Option	lib/find_dupe_images/option.rb	/^  class Option$/;"	c	class:FindDupeImages
+create_hexdigest	lib/find_dupe_images/finder.rb	/^      def create_hexdigest$/;"	f	class:FindDupeImages.Finder
+define_path	lib/find_dupe_images/finder.rb	/^      def define_path$/;"	f	class:FindDupeImages.Finder
+directory_path	lib/find_dupe_images/option.rb	/^    def self.directory_path$/;"	F	class:FindDupeImages.Option
+execute	lib/find_dupe_images.rb	/^  def self.execute$/;"	F	class:FindDupeImages
+init	lib/find_dupe_images/finder.rb	/^      def init$/;"	f	class:FindDupeImages.Finder
+initialize	lib/find_dupe_images/error/base.rb	/^      def initialize$/;"	f	class:FindDupeImages.Error.DirectoryRequired
+initialize	lib/find_dupe_images/error/base.rb	/^      def initialize(error_message = '')$/;"	f	class:FindDupeImages.Error.Base
+initialize	lib/find_dupe_images/logger.rb	/^    def initialize(log_level: :debug, log_file: 'find_dupe_images.log')$/;"	f	class:FindDupeImages.Logger
+log	lib/find_dupe_images/logger.rb	/^    def log(message, log_level: self.log_level)$/;"	f	class:FindDupeImages.Logger
+logger	lib/find_dupe_images.rb	/^  def self.logger$/;"	F	class:FindDupeImages
+read_image_data	lib/find_dupe_images/finder.rb	/^      def read_image_data(filename)$/;"	f	class:FindDupeImages.Finder
+run	lib/find_dupe_images/finder.rb	/^      def run$/;"	f	class:FindDupeImages.Finder
+traverse_directory	lib/find_dupe_images/finder.rb	/^      def traverse_directory(dir)$/;"	f	class:FindDupeImages.Finder

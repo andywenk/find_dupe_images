@@ -1,8 +1,13 @@
 #!/usr/bin/env ruby
 
+require "logger"
+require "logstash-logger"
+require 'digest/md5'
+require 'rmagick'
 require_relative "../lib/find_dupe_images"
 require_relative "../lib/find_dupe_images/logger"
 require_relative "../lib/find_dupe_images/error/base"
+require_relative "../lib/find_dupe_images/image"
 require_relative "../lib/find_dupe_images/finder"
 require_relative "../lib/find_dupe_images/option"
 
