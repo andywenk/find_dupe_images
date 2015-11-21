@@ -12,7 +12,7 @@ module FindDupeImages
 
     def log(message, log_level: self.log_level)
       @@logger.send(log_level, message.force_encoding('UTF-8'))
-      puts message
+      print '.'
     end
   end
 end

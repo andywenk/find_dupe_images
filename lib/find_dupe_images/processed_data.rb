@@ -1,9 +1,9 @@
 module FindDupeImages
   class ProcessedData
-    attr_reader :image_data, :hexdigest
+    attr_reader :file_name, :hexdigest
 
     def initialize(data = {})
-      @image_data = data.fetch(:image_data, nil)
+      @file_name  = data.fetch(:file_name, nil)
       @hexdigest  = data.fetch(:hexdigest, nil)
     end
   end
