@@ -1,8 +1,7 @@
 module FindDupeImages
   class Finder
-    def run
-      path = Option.path
-      puts path
+    def self.run
+      path = FindDupeImages::Option.path
     end
   end
 end

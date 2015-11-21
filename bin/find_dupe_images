@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
-require "find_dupe_images"
+require_relative "../lib/find_dupe_images"
+require_relative "../lib/find_dupe_images/error/base"
+require_relative "../lib/find_dupe_images/finder"
+require_relative "../lib/find_dupe_images/option"
 
-FindDupeImages.run
+FindDupeImages.execute
