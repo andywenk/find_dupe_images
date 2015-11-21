@@ -37,7 +37,7 @@ module FindDupeImages
     end
 
     def remove_marshal_file
-      File.unlink(serialize_to)
+      File.unlink(serialize_to) if File.file?(serialize_to)
     end
 
     private

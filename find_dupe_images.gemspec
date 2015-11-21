@@ -26,13 +26,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "digest"
   spec.add_dependency "rmagick"
-  spec.add_dependency "logger"
   spec.add_dependency "logstash-logger"
-  spec.add_dependency "rmagick"
-  spec.add_dependency "pathname"
-  spec.add_dependency "yaml"
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"

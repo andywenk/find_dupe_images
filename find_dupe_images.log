@@ -141,3 +141,19 @@
 {"image_data":"/Users/andwen/Pictures/Andy/test/schneide-brett_dup_copy.jpg JPEG 1080x720 1080x720+0+0 DirectClass 8-bit 156kb","hexdigest":"9529c75a385833f59108e95be3ad0a61","@timestamp":"2015-11-22T00:15:29.026+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
 {"image_data":"/Users/andwen/Pictures/Andy/test/team-internet.jpg JPEG 1080x720 1080x720+0+0 DirectClass 8-bit 168kb","hexdigest":"7c2c00d1e99a4a77503c4c7fafb44c1c","@timestamp":"2015-11-22T00:15:29.699+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
 {"image_data":"/Users/andwen/Pictures/Andy/test/team-internet_copy.jpg JPEG 1080x720 1080x720+0+0 DirectClass 8-bit 168kb","hexdigest":"7c2c00d1e99a4a77503c4c7fafb44c1c","@timestamp":"2015-11-22T00:15:30.382+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `MD' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.917+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `GEMSPEC' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.918+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `LOG' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.918+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.919+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `LOCK' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.919+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `MARSHAL' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.920+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.920+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `MD' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.921+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.921+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `RB' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.922+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.922+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.923+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.923+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.923+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.924+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
+{"error":"no decode delegate for this image format `' @ error/constitute.c/ReadImage/501","@timestamp":"2015-11-22T00:28:15.924+01:00","@version":"1","severity":"DEBUG","host":"andwen-3.local"}
