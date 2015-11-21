@@ -6,6 +6,6 @@ describe FindDupeImages::Option do
   end
 
   it 'has methods' do
-    expect(FindDupeImages::Option.respond_to?(:path)).to be_truthy
+    expect(FindDupeImages::Option.respond_to?(:directory_path)).to be_truthy
   end
 end

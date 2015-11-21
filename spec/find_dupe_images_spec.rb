@@ -13,7 +13,4 @@ describe FindDupeImages do
   it 'has methods' do
     expect(FindDupeImages.respond_to?(:execute)).to be_truthy
   end
-
-
-
 end
