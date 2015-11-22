@@ -36,7 +36,10 @@ module FindDupeImages
             log_data(filename)
             serialize_data
           end
-          trap("SIGINT") { puts 'interrupted ...' }
+          trap("SIGINT") do
+            puts 'Interrupted! Closing.'
+            exit(0)
+          end
         end
       end
 
