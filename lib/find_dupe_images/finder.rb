@@ -31,9 +31,10 @@ module FindDupeImages
         puts "\nStarting to process #{@directory.size} images ...\n\n"
 
         @directory.each do |filename|
+          @image = FindDupeImages::Image.new(filename)
           read_image_data(filename)
 
-          if @image_data.is_image?
+          if @image.is_image?
             $count = $count.nil? ? 1 : $count + 1
             log_data(filename)
             serialize_data
@@ -47,18 +48,16 @@ module FindDupeImages
       end
 
       def log_data(filename)
-
         create_hexdigest
         FindDupeImages.logger.log(processed_image_data.to_json)
       end
 
       def read_image_data(filename)
-        image = FindDupeImages::Image.new(filename).read
-        @image_data = image.read_image
+        @image_data = @image.image
       end
 
       def create_hexdigest
-        @hexdigest = Digest::MD5.hexdigest @image_data.export_pixels.join
+        @hexdigest = Digest::MD5.hexdigest @image_data.export_pixels_to_str
       end
 
       def processed_image_data

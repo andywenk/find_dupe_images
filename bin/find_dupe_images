@@ -1,21 +1,21 @@
 #!/usr/bin/env ruby
 
-# require "logger"
-# require "logstash-logger"
-# require 'digest/md5'
-# require 'rmagick'
-# require 'pathname'
-# require 'yaml'
-# require_relative "../lib/find_dupe_images"
-# require_relative "../lib/find_dupe_images/logger"
-# require_relative "../lib/find_dupe_images/error/base"
-# require_relative "../lib/find_dupe_images/image"
-# require_relative "../lib/find_dupe_images/finder"
-# require_relative "../lib/find_dupe_images/option"
-# require_relative "../lib/find_dupe_images/serializer"
-# require_relative "../lib/find_dupe_images/processed_data"
+require "logger"
+require "logstash-logger"
+require 'digest/md5'
+require 'rmagick'
+require 'pathname'
+require 'yaml'
+require_relative "../lib/find_dupe_images"
+require_relative "../lib/find_dupe_images/logger"
+require_relative "../lib/find_dupe_images/error/base"
+require_relative "../lib/find_dupe_images/image"
+require_relative "../lib/find_dupe_images/finder"
+require_relative "../lib/find_dupe_images/option"
+require_relative "../lib/find_dupe_images/serializer"
+require_relative "../lib/find_dupe_images/processed_data"
 
-require 'find_dupe_images'
+#require 'find_dupe_images'
 
 info = <<INFO
 
@@ -39,4 +39,11 @@ INFO
 
 puts info
 
+@start = Time.now
+
 FindDupeImages.execute
+
+@end = Time.now
+@duration = Time.at((@end - @start).ceil.to_i).utc.strftime("%H:%M:%S")
+
+puts "Duration: #{@duration}"
