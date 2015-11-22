@@ -40,5 +40,3 @@ INFO
 puts info
 
 FindDupeImages.execute
-
-trap("SIGINT") { puts 'interupted ...' }
