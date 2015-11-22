@@ -1,6 +1,6 @@
 module FindDupeImages
   class Image
-    attr_reader :read_image
+    attr_accessor :read_image
 
     def initialize(image)
       @image_types  = %w(GIF JPEG PNG TIFF BMP ICO CUR PSD SVG WEBP)
