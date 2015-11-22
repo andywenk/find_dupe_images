@@ -31,11 +31,14 @@ module FindDupeImages
         puts "\nStarting to process #{@directory.size} images ...\n\n"
 
         @directory.each do |filename|
-          if FindDupeImages::Image.new(filename).is_image?
+          read_image_data(filename)
+
+          if @image_data.is_image?
             $count = $count.nil? ? 1 : $count + 1
             log_data(filename)
             serialize_data
           end
+
           trap("SIGINT") do
             puts 'Interrupted! Closing.'
             exit(0)
@@ -44,13 +47,14 @@ module FindDupeImages
       end
 
       def log_data(filename)
-        read_image_data(filename)
+
         create_hexdigest
         FindDupeImages.logger.log(processed_image_data.to_json)
       end
 
       def read_image_data(filename)
-        @image_data = Magick::Image.read(filename.to_s).first
+        image = FindDupeImages::Image.new(filename).read
+        @image_data = image.read_image
       end
 
       def create_hexdigest
