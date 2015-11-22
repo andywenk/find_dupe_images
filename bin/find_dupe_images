@@ -29,6 +29,8 @@ Description:
 
   All you have to do is to give a starting directory. All images in directories below will be procesed.
 
+  If you want to stop the process, simply hit CTRL + c.
+
 Usage:
 
   find_dupe_images /some/directory/with/images
@@ -38,3 +40,5 @@ INFO
 puts info
 
 FindDupeImages.execute
+
+trap("SIGINT") { puts 'interupted ...' }
