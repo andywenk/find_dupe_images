@@ -16,7 +16,6 @@ module FindDupeImages
     private
 
     def image_type
-      #IO.popen(["file", "--brief", "--mime-type", '/Users/andwen/Pictures/Andy/team-internet.jpg'], in: :close, err: :close) { |io| io.read.chomp }
       @image.format
     end
 
