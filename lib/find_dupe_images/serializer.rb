@@ -10,10 +10,12 @@ module FindDupeImages
     end
 
     def serialize
-      File.open(serialize_to, 'a') do |file|
+      f = File.open(serialize_to_file, 'a')
+      f do |file|
         file.print Marshal::dump(@processed_image_data)
         file.print @seperator
       end
+      f.close
     end
 
     def deserialize
@@ -21,7 +23,7 @@ module FindDupeImages
       hexdigests  = {}
       hits        = {}
 
-      File.open(serialize_to, 'r').each do |object|
+      File.open(serialize_to_file, 'r').each do |object|
         o = Marshal::load(object.chomp)
         if hexdigests.has_key?(o.hexdigest)
           hits[o.hexdigest] = "#{o.file_name} is a duplicate of #{hexdigests[o.hexdigest].join(' and ')}"
@@ -37,12 +39,12 @@ module FindDupeImages
     end
 
     def remove_marshal_file
-      File.unlink(serialize_to) if File.file?(serialize_to)
+      File.unlink(serialize_to_file) if File.file?(serialize_to_file)
     end
 
     private
 
-    def serialize_to
+    def serialize_to_file
       Pathname.new([File.expand_path('../../', __FILE__), @serialize_filename].join(''))
     end
   end
