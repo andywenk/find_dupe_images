@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
-require "logger"
 require "logstash-logger"
 require 'digest/md5'
 require 'rmagick'
 require 'pathname'
 require 'yaml'
+require 'mime/types'
 require_relative "../lib/find_dupe_images"
 require_relative "../lib/find_dupe_images/logger"
 require_relative "../lib/find_dupe_images/error/base"
@@ -15,11 +15,11 @@ require_relative "../lib/find_dupe_images/option"
 require_relative "../lib/find_dupe_images/serializer"
 require_relative "../lib/find_dupe_images/processed_data"
 
-#require 'find_dupe_images'
+#require  'find_dupe_images'
 
 info = <<INFO
 
-                    ===find_dupe_images #{FindDupeImages::VERSION}===
+                  find_dupe_images #{FindDupeImages::VERSION}
 
 Description:
 

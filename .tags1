@@ -1,0 +1,13 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+FindDupeImages	/Users/andwen/project/ruby/find_dupe_images/find_dupe_images/lib/find_dupe_images/serializer.rb	/^module FindDupeImages$/;"	module	line:1
+Serializer	/Users/andwen/project/ruby/find_dupe_images/find_dupe_images/lib/find_dupe_images/serializer.rb	/^  class Serializer$/;"	class	line:2	class:FindDupeImages
+initialize	/Users/andwen/project/ruby/find_dupe_images/find_dupe_images/lib/find_dupe_images/serializer.rb	/^    def initialize(processed_image_data = nil)$/;"	method	line:6	class:FindDupeImages.Serializer
+serialize	/Users/andwen/project/ruby/find_dupe_images/find_dupe_images/lib/find_dupe_images/serializer.rb	/^    def serialize$/;"	method	line:12	class:FindDupeImages.Serializer
+deserialize	/Users/andwen/project/ruby/find_dupe_images/find_dupe_images/lib/find_dupe_images/serializer.rb	/^    def deserialize$/;"	method	line:19	class:FindDupeImages.Serializer
+remove_marshal_file	/Users/andwen/project/ruby/find_dupe_images/find_dupe_images/lib/find_dupe_images/serializer.rb	/^    def remove_marshal_file$/;"	method	line:41	class:FindDupeImages.Serializer
+serialize_to_file	/Users/andwen/project/ruby/find_dupe_images/find_dupe_images/lib/find_dupe_images/serializer.rb	/^    def serialize_to_file$/;"	method	line:47	class:FindDupeImages.Serializer

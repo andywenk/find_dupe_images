@@ -4,6 +4,7 @@ require 'digest/md5'
 require 'rmagick'
 require 'pathname'
 require 'yaml'
+require 'mime/types'
 require "find_dupe_images/logger"
 require "find_dupe_images/version"
 require "find_dupe_images/error/base"

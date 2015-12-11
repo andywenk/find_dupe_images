@@ -28,6 +28,13 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "rmagick"
   spec.add_dependency "logstash-logger"
+  spec.add_dependency "mime-types", "2.99"
+
+  if `man libmagic`.size > 0
+    spec.add_dependency "ruby-filemagic"
+  else
+    spec.post_install_message = "MISSING library - Please install libmagic!"
+  end
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"

@@ -5,7 +5,8 @@ module FindDupeImages
 
     def initialize(image)
       @image_types  = %w(GIF JPEG PNG TIFF BMP ICO CUR PSD SVG WEBP)
-      @image        = read(image)
+      return if image_is_too_big?(image)
+      read_image(image)
     end
 
     def is_image?
@@ -15,8 +16,20 @@ module FindDupeImages
 
     private
 
+    def image_is_too_big?(image)
+      too_big = File.size?(image).to_f / (1024) > 8000
+      if too_big
+        FindDupeImages.logger.log({error: "The image #{image} is too big!"}.to_json)
+      end
+      too_big
+    end
+
     def image_type
       @image.format
+    end
+
+    def read_image(image)
+      @image = read(image)
     end
 
     def read(image)

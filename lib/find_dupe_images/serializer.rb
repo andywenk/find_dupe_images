@@ -10,18 +10,18 @@ module FindDupeImages
     end
 
     def serialize
-      f = File.open(serialize_to_file, 'a')
-      f do |file|
+      File.open(serialize_to_file, 'a') do |file|
         file.print Marshal::dump(@processed_image_data)
         file.print @seperator
       end
-      f.close
     end
 
     def deserialize
       $/          = @seperator
       hexdigests  = {}
       hits        = {}
+
+      return hits unless File.exist?(serialize_to_file)
 
       File.open(serialize_to_file, 'r').each do |object|
         o = Marshal::load(object.chomp)

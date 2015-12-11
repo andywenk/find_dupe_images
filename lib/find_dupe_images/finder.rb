@@ -28,13 +28,13 @@ module FindDupeImages
       def traverse_directory(dir)
         FindDupeImages::Serializer.new.remove_marshal_file
 
-        puts "\nStarting to process #{@directory.size} images ...\n\n"
+        puts "\nStarting to process #{@directory.size} files in the directory ...\n\n"
 
         @directory.each do |filename|
           @image = FindDupeImages::Image.new(filename)
-          read_image_data(filename)
 
           if @image.is_image?
+            read_image_data(filename)
             $count = $count.nil? ? 1 : $count + 1
             log_data(filename)
             serialize_data
@@ -70,6 +70,7 @@ module FindDupeImages
 
       def result
         results = FindDupeImages::Serializer.new.deserialize
+
         if results.size > 0
           with_duplicates(results)
         else
