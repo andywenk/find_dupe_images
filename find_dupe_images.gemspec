@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   if `man libmagic`.size > 0
     spec.add_dependency "ruby-filemagic"
   else
-    spec.post_install_message = "MISSING library - Please install libmagic!"
+    raise "\n\nMISSING library - Please install libmagic!\n\n"
   end
 
   spec.add_development_dependency "bundler", "~> 1.10"
