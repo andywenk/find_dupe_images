@@ -11,7 +11,7 @@ module FindDupeImages
     end
 
     def is_image?
-      return false unless @image.is_a?(Magick::Image)
+      @image.is_a?(Magick::Image)
     end
 
     private
@@ -32,8 +32,12 @@ module FindDupeImages
     def mime_is_image?
       fm = ::FileMagic.new(::FileMagic::MAGIC_MIME)
       mime_type = fm.file(@raw_image).split(';').first
-      puts ::IMAGE_MIME_TYPES.includes?(mime_type)
-      exit(1)
+      if FindDupeImages::IMAGE_MIME_TYPES.include?(mime_type)
+        return true
+      else
+        $not_an_image += 1
+        false
+      end
     end
 
     def is_too_big?

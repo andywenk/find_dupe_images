@@ -7,7 +7,7 @@ module FindDupeImages
         init
         define_path
         define_directory
-        traverse_directory(@directory_path)
+        traverse_directory
         result
       end
 
@@ -25,7 +25,7 @@ module FindDupeImages
         @directory = Dir.glob("#{@directory_path}**/*").reject { |fn| File.directory?(fn)}
       end
 
-      def traverse_directory(dir)
+      def traverse_directory
         FindDupeImages::Serializer.new.remove_marshal_file
 
         puts "\nStarting to process #{@directory.size} files in the directory ...\n\n"
@@ -70,25 +70,36 @@ module FindDupeImages
 
       def result
         results = FindDupeImages::Serializer.new.deserialize
+        create_report(results)
+      end
+
+      def create_report(results)
         results.size > 0 ? with_duplicates(results) : without_duplicates
+        puts "\nReport:"
         files_too_big
-        puts "\nDONE!"
+        not_an_image
       end
 
       def with_duplicates(results)
-        puts "\n====The following files have been detectad as duplicates:====\n\n"
+        puts "\n\nThe following files have been detected as duplicates:\n\n"
         results.each_pair do |hexdigest, file|
           puts file
         end
       end
 
       def without_duplicates
-        puts "\n\n====No files have been detectad as duplicates====\n"
+        puts "\tNo files have been detectad as duplicates"
       end
 
       def files_too_big
         if $too_big > 0
-          puts "\n\n====Attention: #{$too_big} files have been ignored because they are too big!====\n"
+          puts "\t#{$too_big} files have been ignored because they are too big!"
+        end
+      end
+
+      def not_an_image
+        if $not_an_image > 0
+          puts "\t#{$not_an_image} files have been ignored because they are not recognized as an image!"
         end
       end
     end

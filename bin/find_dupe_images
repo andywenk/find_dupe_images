@@ -7,7 +7,7 @@ require 'pathname'
 require 'yaml'
 require 'filemagic'
 require_relative "../lib/find_dupe_images"
-#require_relative "../lib/find_dupe_images/image_mime_types"
+require_relative "../lib/find_dupe_images/image_mime_types"
 require_relative "../lib/find_dupe_images/logger"
 require_relative "../lib/find_dupe_images/error/base"
 require_relative "../lib/find_dupe_images/image"
@@ -19,7 +19,7 @@ require_relative "../lib/find_dupe_images/processed_data"
 
 #require  'find_dupe_images'
 
-info = <<INFO
+puts <<INFO
 
                   find_dupe_images #{FindDupeImages::VERSION}
 
@@ -39,13 +39,9 @@ Usage:
 
 INFO
 
-puts info
-
 @start = Time.now
-
 FindDupeImages.execute
-
 @end = Time.now
 @duration = Time.at((@end - @start).ceil.to_i).utc.strftime("%H:%M:%S")
 
-puts "Duration: #{@duration}"
+puts "\tIt took #{@duration} to process all files.\n"

@@ -17,8 +17,9 @@ require "find_dupe_images/processed_data"
 
 module FindDupeImages
   MAX_FILE_SIZE = 8000 #in kb
-  $count    = 0
-  $too_big  = 0
+  $count        = 0
+  $too_big      = 0
+  $not_an_image = 0
 
   def self.execute
     begin
