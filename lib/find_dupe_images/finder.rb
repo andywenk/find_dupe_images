@@ -35,7 +35,7 @@ module FindDupeImages
 
           if @image.is_image?
             read_image_data(filename)
-            $count = $count.nil? ? 1 : $count + 1
+            $count += 1
             log_data(filename)
             serialize_data
           end
@@ -70,12 +70,8 @@ module FindDupeImages
 
       def result
         results = FindDupeImages::Serializer.new.deserialize
-
-        if results.size > 0
-          with_duplicates(results)
-        else
-          without_duplicates
-        end
+        results.size > 0 ? with_duplicates(results) : without_duplicates
+        files_too_big
         puts "\nDONE!"
       end
 
@@ -88,6 +84,12 @@ module FindDupeImages
 
       def without_duplicates
         puts "\n\n====No files have been detectad as duplicates====\n"
+      end
+
+      def files_too_big
+        if $too_big > 0
+          puts "\n\n====Attention: #{$too_big} files have been ignored because they are too big!====\n"
+        end
       end
     end
   end

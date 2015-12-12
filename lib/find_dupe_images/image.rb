@@ -4,37 +4,53 @@ module FindDupeImages
     attr_accessor :image
 
     def initialize(image)
+      @raw_image    = image
       @image_types  = %w(GIF JPEG PNG TIFF BMP ICO CUR PSD SVG WEBP)
-      return if image_is_too_big?(image)
-      read_image(image)
+      return unless is_image_and_not_too_big?
+      read_image
     end
 
     def is_image?
       return false unless @image.is_a?(Magick::Image)
-      @image_types.include?(image_type)
     end
 
     private
 
-    def image_is_too_big?(image)
-      too_big = File.size?(image).to_f / (1024) > 8000
-      if too_big
-        FindDupeImages.logger.log({error: "The image #{image} is too big!"}.to_json)
+    def is_image_and_not_too_big?
+      !image_is_too_big? && mime_is_image?
+    end
+
+    def image_is_too_big?
+      if is_too_big?
+        $too_big += 1
+        FindDupeImages.logger.log({error: "The image #{@raw_image} is too big!"}.to_json)
+        return true
       end
-      too_big
+      false
+    end
+
+    def mime_is_image?
+      fm = ::FileMagic.new(::FileMagic::MAGIC_MIME)
+      mime_type = fm.file(@raw_image).split(';').first
+      puts ::IMAGE_MIME_TYPES.includes?(mime_type)
+      exit(1)
+    end
+
+    def is_too_big?
+      File.size?(@raw_image).to_f / (1024) > FindDupeImages::MAX_FILE_SIZE
     end
 
     def image_type
       @image.format
     end
 
-    def read_image(image)
-      @image = read(image)
+    def read_image
+      @image = read
     end
 
-    def read(image)
+    def read
       begin
-        Magick::Image.read(image).first
+        Magick::Image.read(@raw_image).first
       rescue Magick::ImageMagickError => e
         FindDupeImages.logger.log({error: e.message}.to_json)
       end
