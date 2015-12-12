@@ -1,19 +1,30 @@
+#
+# FindDupeImages::Finder
+#
+# will be run to scan the images
+#
 module FindDupeImages
   class Finder
-    attr_reader :directory_path, :image_data, :hexdigest
+    attr_reader :image_data, :hexdigest
 
     class << self
+
+      # start the scan
+      #
+      # @return [String]
       def run
-        init
+        create_traversed_directories_array
         define_path
         define_directory
         traverse_directory
         result
+
+        puts result.class
       end
 
       private
 
-      def init
+      def create_traversed_directories_array
         @traversed_directories = []
       end
 
