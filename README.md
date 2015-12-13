@@ -1,8 +1,20 @@
 # FindDupeImages
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/find_dupe_images`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a simple gem to find duplicate images in a directory structure recursively. At the moment images greater than
+8 MB will be ignored. This is due to the fact, that I observed a high memory consumption leading to use many
+GB RAM. You can easily change this to another value by changing `MAX_FILE_SIZE` in find_dupe_images.rb.
 
-TODO: Delete this and the text above, and describe your gem
+## Technical idea
+
+The process of comparing the images is this:
+
+* traverse through the directory
+* check if the mime-type is the one for an image (defined in `ImageMimeTypes`)
+* open the image and read the bytes
+* create an `Digest::MD5.hexdigest` of the content of the image
+* Marshal.dump the digest and further info to a file (serialized.marshal)
+* when all images are scanned, open the marshal file, run through it and find duplicate digests
+* show the result
 
 ## Installation
 
@@ -22,7 +34,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+It's as simple as this:
+
+    $ find_dupe_images /your/path/to/images
+
+where the directory images can contain directories with directories of images.
 
 ## Development
 
@@ -33,4 +49,3 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/find_dupe_images. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
