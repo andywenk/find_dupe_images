@@ -1,4 +1,4 @@
 # FindDupeImages::VERSION
 module FindDupeImages
-  VERSION = "0.4.2"
+  VERSION = "0.4.3"
 end
