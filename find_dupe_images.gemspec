@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = FindDupeImages::VERSION
   spec.authors       = ["Andy Wenk"]
   spec.email         = ["andy@nms.de"]
+  spec.license       = 'Apache 2.0'
 
   spec.summary       = %q{Find duplicate images in a directory structure}
   spec.description   = %q{Find duplicate images in a directory structure}
