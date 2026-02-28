@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
     raise "\n\nMISSING library - Please install libmagic!\n\n\tMac OS X: brew install libmagic\n\tLinux: see http://blackwinter.github.io/ruby-filemagic/#label-Installation\n\n"
   end
 
-  spec.add_development_dependency "bundler", "~> 1.10"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "bundler", ">= 1.10"
+  spec.add_development_dependency "rake", ">= 10.0"
   spec.add_development_dependency "rspec"
 end
